@@ -1,0 +1,156 @@
+body{
+    padding: 0;
+    margin: 0;
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container{
+    height: 100vh;
+    position: relative;
+}
+
+.main-header{
+    height: 5%;
+    background-color: #009688;
+    display: flex;
+/*    padding: 0.5% 100px;*/
+}
+
+.header-right{
+    display: flex;
+    margin-left: auto;
+    padding-right: 20px;
+    font-size: 30px;
+    align-items: center;
+    color: white;
+}
+
+.main-code{
+    height: 90%;
+    display: flex;
+/*    justify-content: space-around;*/
+    align-items: center;
+/*    padding: 5% 200px;*/
+}
+
+.main-code .title{
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+
+.project-editor{
+    display: flex;
+    width: 60%;
+    height: 100%;
+    background-color: #FAFAFA;
+}
+
+.project-files{
+    overflow: hidden;
+    width: 25%;
+    background-color: #FAFAFA;
+    border-right: 1px solid #e0e0e0;
+}
+
+.project-files .files.folder{
+    margin-top: 15px;
+}
+
+.project-files .folder{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: 20px;
+}
+
+.folder .file, .folder .folder-name{
+    margin: 5px 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 25px
+}
+
+.folder .file{
+    
+    background-image: url(../img/file-code-icon.png);
+    
+}
+
+.folder .folder-name{
+    margin-left: -20px;
+    background-image: url(../img/folder-icon.png);
+}
+
+.code-editor{
+    overflow: hidden;
+    width: 75%;
+    border-right: 1px solid #e0e0e0;
+}
+
+.code-result{
+    overflow: hidden;
+    width: 40%;
+    height: 100%;
+    background-color: #FAFAFA;
+}
+
+.tasks-nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    box-shadow: -3px 0px 10px rgba(0,0,0,0.26);
+}
+
+.tasks-nav .nav-title{
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    display: flex;
+}
+
+.tasks-nav .nav-title .back{
+    margin-left: auto;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.tasks-nav .nav-title h2{
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+.tasks-nav .tasks-list{
+    list-style: none;
+    padding: 0;
+}
+
+.tasks-nav .tasks-list li{
+    padding: 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.tasks-nav .tasks-list li:hover{
+    background-color: #E0F2F1;
+}
+
+.tasks-nav .tasks-list li:first-of-type{
+    border-top: 1px solid #e0e0e0;
+}
+
+.tasks-nav .tasks-list li.current{
+    color: #009688;
+}
+
+
+.main-footer{
+    height: 5%;
+    background-color: darkcyan;
+/*    padding: 0.5% 100px;*/
+}
