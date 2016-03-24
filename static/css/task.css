@@ -26,6 +26,10 @@ body{
     color: white;
 }
 
+.header-right .menu{
+    cursor: pointer;
+}
+
 .main-code{
     height: 90%;
     display: flex;
@@ -35,6 +39,9 @@ body{
 }
 
 .main-code .title{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
     padding: 5px 10px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
@@ -48,6 +55,8 @@ body{
 }
 
 .project-files{
+    padding-top: 40px;
+    position: relative;
     overflow: hidden;
     width: 25%;
     background-color: #FAFAFA;
@@ -55,7 +64,7 @@ body{
 }
 
 .project-files .files.folder{
-    margin-top: 15px;
+    margin-top: 40px;
 }
 
 .project-files .folder{
@@ -84,12 +93,21 @@ body{
 }
 
 .code-editor{
+    position: relative;
     overflow: hidden;
     width: 75%;
+    height: 100%;
     border-right: 1px solid #e0e0e0;
 }
 
+.code-editor #editor{
+    margin-top: 40px;
+    height: 100%;
+/*    background-color: aqua;*/
+}
+
 .code-result{
+    position: relative;
     overflow: hidden;
     width: 40%;
     height: 100%;
@@ -97,6 +115,9 @@ body{
 }
 
 .tasks-nav{
+    width: 450px;
+    overflow: hidden;
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -106,6 +127,7 @@ body{
 }
 
 .tasks-nav .nav-title{
+    width: 410px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
     display: flex;
@@ -116,6 +138,7 @@ body{
     font-size: 30px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .tasks-nav .nav-title h2{
@@ -130,6 +153,7 @@ body{
 }
 
 .tasks-nav .tasks-list li{
+    width: 450px;
     padding: 15px;
     font-size: 20px;
     border-bottom: 1px solid #e0e0e0;
