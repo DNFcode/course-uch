@@ -40,6 +40,7 @@ body{
 
 .main-code .title{
     position: absolute;
+    top: 0;
     z-index: 10;
     width: 100%;
     padding: 5px 10px;
@@ -64,7 +65,6 @@ body{
 }
 
 .project-files .files.folder{
-    margin-top: 40px;
 }
 
 .project-files .folder{
@@ -82,9 +82,20 @@ body{
 }
 
 .folder .file{
-    
     background-image: url(../img/file-code-icon.png);
-    
+    border-left: 2px solid #B2DFDB;
+    cursor: pointer;
+}
+
+.folder .file:hover{
+    border-left: 2px solid #00796B;
+    transition: border-left 0.3s ease-out 0s,
+        background-color 0.3s ease-out 0s;
+    background-color: #E0F2F1;
+}
+
+.folder .file.current{
+    border-left: 2px solid #00796B;
 }
 
 .folder .folder-name{
@@ -98,12 +109,18 @@ body{
     width: 75%;
     height: 100%;
     border-right: 1px solid #e0e0e0;
+    background-color: #ebebeb;
 }
 
 .code-editor #editor{
-    margin-top: 40px;
-    height: 100%;
-/*    background-color: aqua;*/
+    position: absolute;
+    height:auto;
+    margin-top: 30px;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    background-color: #FAFAFA;
 }
 
 .code-result{
@@ -115,6 +132,7 @@ body{
 }
 
 .tasks-nav{
+    z-index: 20;;
     width: 450px;
     overflow: hidden;
     display: none;
@@ -162,6 +180,7 @@ body{
 
 .tasks-nav .tasks-list li:hover{
     background-color: #E0F2F1;
+    transition: background-color 0.3s ease-out;
 }
 
 .tasks-nav .tasks-list li:first-of-type{
@@ -176,5 +195,4 @@ body{
 .main-footer{
     height: 5%;
     background-color: darkcyan;
-/*    padding: 0.5% 100px;*/
 }
