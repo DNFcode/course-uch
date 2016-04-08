@@ -1,6 +1,6 @@
 #!/bin/sh
-cd ../../rs_cargo
-cargo new $1
-cp -r "../files/$1/." "./$1/src/"
-cd "./$1"
+cd $1
+cargo new $3
+cp -r "$2/$3/." "./$3/src/"
+cd "./$3"
 cargo run -q

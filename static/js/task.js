@@ -57,4 +57,8 @@ $(document).ready(function(){
         var code = "";
         g.files.push(new File(name, $(this), code));
     });
-})
+
+    $('.controls .run').click(function(){
+             
+    });
+});
