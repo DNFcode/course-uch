@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+import tasks.views as tasks
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^index/', tasks.index),
+    url(r'^run/', tasks.run_files)
 ]

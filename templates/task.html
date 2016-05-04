@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../static/css/task.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <script src="../static/js/jquery-2.2.2.min.js"></script>
-    <script src="../static/js/task.js"></script>
-    <script src="../static/js/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery-2.2.2.min.js"></script>
+    <script src="/static/js/task.js"></script>
+    <script src="/static/js/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
     <div class="main-container">
@@ -45,13 +45,15 @@
                         ololol
                     </div>
                     <div class="controls">
-                        <i class="run fa fa-play"></i>
+                        <button class="run fa fa-play"></button>
                     </div>
                 </div>
             </section>
             <section class="code-result">
                 <div class="title">
                     Результат выполнения:
+                </div>
+                <div id="result">
                 </div>
             </section>
         </main>
@@ -68,7 +70,7 @@
             </ul>
         </nav>
         <footer class="main-footer">
-        
+
         </footer>
     </div>
 </body>

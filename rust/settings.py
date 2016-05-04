@@ -55,7 +55,7 @@ ROOT_URLCONF = 'rust.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,9 +117,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATICFILES_DIRS = [
+    'static/'
+]
+
+STATIC_ROOT = '../../static-files/'
 
 STATIC_URL = '/static/'
 
-RUST_SRC_PATH = '../../rust_src'
-RUST_CARGO_PATH = '../../cargo'
-RUST_TESTS_PATH = '../../tests'
+RUST_SRC_PATH = '../rust_src'
+RUST_CARGO_PATH = '../cargo'
+RUST_TESTS_PATH = '../tests'
