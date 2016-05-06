@@ -1,0 +1,29 @@
+{% extends 'task.html' %}
+
+{% block files %}
+    <ul class="files folder">
+        <li class="file current">main.rs</li>
+    </ul>
+{% endblock %}
+
+{% block task %}
+    <h2 class="task-header">Vector is poweeeer...</h2>
+    <div class="task-description">
+    Напишите программу, которая принимает на вход 2 массива чисел (<=1000)
+        одинакового размера (<=1000) и выводит массив чисел
+    каждое число которого является наибольшим числом на соответствующих позициях в данных массивах.
+    </div>
+    Пример входных данных:
+    <div class="task-input">
+    3 6 1 5 2 1<br>
+    0 4 3 6 9 1<br>
+    </div>
+    Результат:
+    <div class="task-output">
+    3 6 3 6 9 1
+    </div>
+{% endblock %}
+
+{% block theory %}
+
+{% endblock %}

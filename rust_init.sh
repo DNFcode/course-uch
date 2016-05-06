@@ -3,4 +3,7 @@ cd $1
 cargo new $3
 cp -r "$2/$3/." "./$3/src/"
 cd "./$3"
-cargo run -q
+cargo run -q < ./src/input &
+PID=$!
+sleep 2
+kill -INT $PID

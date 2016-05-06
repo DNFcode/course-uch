@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/task.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <script src="/static/js/jquery-2.2.2.min.js"></script>
     <script src="/static/js/task.js"></script>
     <script src="/static/js/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -27,33 +28,45 @@
                     <div class="title">
                         Файлы проекта:
                     </div>
-                    <ul class="files folder">
-                        <li class="file current">main.rs</li>
-                        <li class="file">second.rs</li>
-                        <ul class="folder">
-                            <div class="folder-name">folder</div>
-                            <li class="file">inf.rs</li>
-                            <li class="file">io.rs</li>
-                        </ul>
-                    </ul>
+                    {% block files %}
+                    {% endblock %}
+{#                    <ul class="files folder">#}
+{#                        <li class="file current">main.rs</li>#}
+{#                        <li class="file">second.rs</li>#}
+{#                        <ul class="folder">#}
+{#                            <div class="folder-name">folder</div>#}
+{#                            <li class="file">inf.rs</li>#}
+{#                            <li class="file">io.rs</li>#}
+{#                        </ul>#}
+{#                    </ul>#}
                 </div>
                 <div class="code-editor">
-                    <div class="title">
-                        Название файла
+                    <div class="title tabs">
+                        <span class="current-file tab active">FILE</span>
+                        <span class="input tab">Входные данные</span>
                     </div>
-                    <div id="editor">
-                        ololol
-                    </div>
+                    <div id="editor"></div>
                     <div class="controls">
                         <button class="run fa fa-play"></button>
+                        <button class="check fa fa-check"></button>
                     </div>
                 </div>
             </section>
             <section class="code-result">
-                <div class="title">
-                    Результат выполнения:
+                <div class="title tabs">
+                    <span class="tab active" data-tab-id="1">Результат выполнения</span>
+                    <span class="tab" data-tab-id="2">Задание</span>
+                    <span class="tab" data-tab-id="3">Теория</span>
                 </div>
-                <div id="result">
+                <div id="result" class="tab-content active" data-tab-id="1">
+                </div>
+                <div class="tab-content" data-tab-id="2">
+                    {% block task %}
+                    {% endblock %}
+                </div>
+                <div class="tab-content" data-tab-id="3">
+                    {% block theory %}
+                    {% endblock %}
                 </div>
             </section>
         </main>

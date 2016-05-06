@@ -1,0 +1,25 @@
+{% extends 'task.html' %}
+
+{% block files %}
+    <ul class="files folder">
+        <li class="file current">main.rs</li>
+        <li class="file">wow.rs</li>
+    </ul>
+{% endblock %}
+
+{% block task %}
+    <h2 class="task-header">Hello rust loops!</h2>
+    <div class="task-description">
+    Реализуйте класс Heisenberg c методами:<br>
+    knock – выводит строку "I AM THE ONE WHO KNOCKS!"<br>
+    cook – принимает на вход число N и выводит строку "N$ profit!", где N это введенное число<br>
+    jesse – принимает на вход массив случайного размера и выводит тот же
+        массив, где четные числа заменены на "SCIENCE!", а нечетные на "BEATCH!"<br>
+    say_my_name – принимает на вход строку, если входная строка равна "Heisenberg"
+        то вывести строку "You goddamn right", иначе ничего.<br>
+    </div>
+{% endblock %}
+
+{% block theory %}
+
+{% endblock %}

@@ -20,5 +20,8 @@ import tasks.views as tasks
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', tasks.index),
-    url(r'^run/', tasks.run_files)
+    url(r'^run/', tasks.run_files),
+    url(r'^t1/', tasks.t1),
+    url(r'^t2/', tasks.t2),
+    url(r'^t3/', tasks.t3)
 ]

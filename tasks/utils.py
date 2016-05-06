@@ -9,8 +9,13 @@ def rm_task(task_id):
 
 
 def run(task_id):
-    stdout = subprocess.check_output(['sh', './rust_init.sh', SETTINGS.RUST_CARGO_PATH, SETTINGS.RUST_SRC_PATH, task_id])
-    return stdout
+    try:
+        stdout = subprocess.check_output(
+            ['sh', './rust_init.sh', SETTINGS.RUST_CARGO_PATH, SETTINGS.RUST_SRC_PATH, task_id],
+            stderr=subprocess.STDOUT)
+        return stdout
+    except subprocess.CalledProcessError as ex:
+        return ex.output
 
 
 def compare(example, result):
