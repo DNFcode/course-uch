@@ -1,5 +1,9 @@
 {% extends 'task.html' %}
 
+{% block task_id %}
+    <input id="task-id" type="hidden" value="2">
+{% endblock %}
+
 {% block files %}
     <ul class="files folder">
         <li class="file current">main.rs</li>

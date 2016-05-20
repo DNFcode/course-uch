@@ -26,7 +26,10 @@ def run_files(request):
 
     create_files(files, task_id)
 
-    result = run(task_id)
+    result = compile_rust(task_id)
+    if not result:
+        result = run(task_id)
+
     rm_task(task_id)
 
     return HttpResponse(result)
@@ -35,11 +38,15 @@ def run_files(request):
 @csrf_exempt
 def check(request):
     files = json.loads(request.POST.get('files', '[]'))
+    bd_task_id = request.POST.get('task_id', '1')
     task_id = "%032x" % random.getrandbits(128)
 
     create_files(files, task_id)
 
-    result = run(task_id)
+    result = compile_rust(task_id)
+    if not result:
+        result = check_task(task_id, bd_task_id)
+
     rm_task(task_id)
 
     return HttpResponse(result)

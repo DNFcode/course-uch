@@ -113,6 +113,33 @@ function setup_files(){
             }
         })
     });
+
+    $('.controls .check').click(function(){
+        $btn = $(this);
+        var data = {};
+        g.files.forEach(function(file){
+            if (file.is_current()) {
+              file.save_code();
+              file.set_current();
+            }
+            data[file.name] = file.code;
+        });
+        $btn.prop('disabled', true);
+        $.ajax({
+            url: '/check/',
+            method: 'POST',
+            data: {files: JSON.stringify(data), task_id: $('#task-id').val()},
+            success: function(data){
+                data = data.replace(/\n/g, '<br>');
+                data = data.replace(/ /g, '&nbsp;');
+                $('#result').html(data);
+                $btn.prop('disabled', false);
+            },
+            error: function(data){
+                $btn.prop('disabled', false);
+            }
+        })
+    });
 }
 
 function setup_tabs(){
